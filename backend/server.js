@@ -4,9 +4,9 @@ require('dotenv').config();
 const pool = require('./config/db');
 
 // Importar rotas
-const authRoutes = require('./routes/auth');
+const authRoutes = require('./routes/auth');//github.com/Rafael10100/Login-Register-App
 
-const app = express();
+const app = express();//github.com/Rafael10100/Login-Register-App
 
 // Middleware
 app.use(cors());

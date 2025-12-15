@@ -1,23 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
-const pool = require('./config/db');
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const pool = require("./config/db");
 
 // Importar rotas
-const authRoutes = require('./routes/auth');//github.com/Rafael10100/Login-Register-App
+const authRoutes = require("./routes/auth"); //github.com/Rafael10100/Login-Register-App
 
-const app = express();//github.com/Rafael10100/Login-Register-App
+const app = express(); //github.com/Rafael10100/Login-Register-App
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Rotas
-app.use('/api/auth', authRoutes);
+app.use("/api/auth", authRoutes);
 
 // Rota de teste
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Servidor está funcionando' });
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK", message: "Servidor está funcionando" });
 });
 
 // Configurar banco de dados
@@ -33,9 +33,9 @@ const createTables = async () => {
       );
     `;
     await pool.query(query);
-    console.log('Tabela users criada/verificada');
+    console.log("Tabela users criada/verificada");
   } catch (error) {
-    console.error('Erro ao criar tabelas:', error);
+    console.error("Erro ao criar tabelas:", error);
   }
 };
 

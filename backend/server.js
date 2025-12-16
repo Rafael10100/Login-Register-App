@@ -1,8 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
-const pool = require("./config/db");
+import express from "express";
+import cors from "cors"; 
+import dotenv from "dotenv";
+import pool from "../config/db";
 
+dotenv.config();
 // Importar rotas
 const authRoutes = require("./routes/auth"); //github.com/Rafael10100/Login-Register-App
 

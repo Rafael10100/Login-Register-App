@@ -1,7 +1,7 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
-const { validationResult } = require('express-validator');
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import User from '../models/User';
+import { validationResult } from 'express-validator';
 
 exports.register = async (req, res) => {
   try {
